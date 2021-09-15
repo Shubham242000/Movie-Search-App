@@ -1,8 +1,12 @@
 import React from "react"
+import randomColor from "randomcolor"
 function Movie(data) {
     const movie = data.movie
+    const styles = {
+        boxShadow : `0 0 10px ${randomColor()}`   
+    }
     return (
-        <div className="card" key={movie.id}>
+        <div className="card" key={movie.id} styles = {styles}>
                <img className="card--image"
                 src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
                 alt={movie.title + ' poster'}
